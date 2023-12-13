@@ -1,0 +1,60 @@
+<h2>{{title}}</h2>
+
+
+<br/>
+
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+  <div class="mb-3">
+  <p>
+    <label for="firstname" class="form-label">First Name</label>
+    <input type="text" name="firstname" class="form-control" ngModel>
+  </p>
+
+  
+</div>
+  <div class="mb-3">
+  <p>
+    <label for="lastname">Last Name</label>
+    <input type="text" class="form-control" name="lastname" ngModel>
+  </p>
+</div>
+
+  <div class="mb-3">
+  <p>
+    <label for="email">Email </label>
+    <input type="text" id="email" name="email" class="form-control" ngModel>
+  </p>
+
+</div>
+
+
+  <div class="mb-3">
+  <p>
+    <label for="gender" class="form-label">Gender</label>
+    <input type="radio" value="male" name="gender" ngModel> Male
+    <input type="radio" value="female" name="gender" ngModel> Female
+  </p>
+
+</div>
+<div class="form-check">
+  <p>
+    <label for="isMarried" class="form-label" >Married</label>
+    <input type="checkbox" class="form-check-input" name="isMarried" ngModel>
+  </p>
+
+</div>
+  <div class="mb-3">
+  <select   name="country"  class="form-select" aria-label="Default select example" ngModel>
+    <option [ngValue]="c.id" *ngFor="let c of countryList">
+      {{c.name}}
+    </option>
+  </select>
+</div>
+  <p>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </p>
+  
+</form>
+
+
+
